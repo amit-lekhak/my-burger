@@ -6,7 +6,6 @@ import Button from "../../components/UI/Button/Button";
 import classes from "./Auth.module.css";
 import * as actions from "../../store/actions/index";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import { Redirect } from "react-router-dom";
 
 class Auth extends Component {
   state = {
@@ -106,7 +105,6 @@ class Auth extends Component {
   };
 
 
-
   render() {
     const formElementsArray = [];
     for (let key in this.state.controls) {
@@ -139,18 +137,18 @@ class Auth extends Component {
       error = <p>{this.props.error}</p>;
     }
 
-    let redirect = null;
-    if (this.props.isAuth) {
-      if (this.props.isBurgerBuilding) {
-        redirect = <Redirect to="/checkout" />;
-      } else {
-        redirect = <Redirect to="/" />;
-      }
-    }
+    // let redirect = null;
+    // if (this.props.isAuth) {
+    //   if (this.props.isBurgerBuilding) {
+    //     redirect = <Redirect to="/checkout" />;
+    //   } else {
+    //     redirect = <Redirect to="/" />;
+    //   }
+    // }
 
     return (
       <div className={classes.Auth}>
-        {redirect}
+        {/* {redirect} */}
         {error}
         <form onSubmit={this.submitHandler}>
           {form}
